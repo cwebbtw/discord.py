@@ -697,6 +697,7 @@ class AudioPlayer(threading.Thread):
         try:
             self._do_run()
         except Exception as exc:
+            print(exc)
             self._current_error = exc
             self.stop()
         finally:
