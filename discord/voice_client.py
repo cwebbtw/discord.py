@@ -596,6 +596,8 @@ class VoiceClient(VoiceProtocol):
             Source is not opus encoded and opus is not loaded.
         """
 
+        print("player")
+        
         if not self.is_connected():
             raise ClientException('Not connected to voice.')
 
