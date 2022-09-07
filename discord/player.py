@@ -34,6 +34,7 @@ import json
 import sys
 import re
 import io
+import traceback
 
 from typing import Any, Callable, Generic, IO, Optional, TYPE_CHECKING, Tuple, TypeVar, Union
 
@@ -187,6 +188,9 @@ class FFmpegAudio(AudioSource):
             return process
 
     def _kill_process(self) -> None:
+        
+        traceback.print_stack()
+        
         proc = self._process
         if proc is MISSING:
             return
